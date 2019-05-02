@@ -18,6 +18,7 @@ from models import *
 import random
 import numpy as np
 from advertorch.attacks import LinfPGDAttack
+from models.wideresnet import *
 
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--seed', default=11111, type=int)
@@ -65,7 +66,7 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=args.test_batch_siz
 
 
 print('==> Building model..')
-net = ResNet18()
+net = WideResNet_28_10()
 epsilon = args.epsilon
 m = args.m
 delta = torch.zeros(args.train_batch_size, 3, 32, 32)
@@ -79,7 +80,7 @@ if args.resume:
     assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
     checkpoint = torch.load('./checkpoint/ckpt.best')
     basic_net.load_state_dict(checkpoint['net'])
-    best_acc = checkpoint['acc']
+    best_acc = checkpoint['best_acc']
     start_epoch = checkpoint['epoch']
 
 criterion = nn.CrossEntropyLoss()
@@ -87,7 +88,7 @@ optimizer = optim.SGD(net.parameters(), lr=0.1, momentum=args.momentum, weight_d
 
 adversary = LinfPGDAttack(
     net, loss_fn=nn.CrossEntropyLoss(reduction="sum"), eps=8./255.,
-    nb_iter=40, eps_iter=2./255., rand_init=True, clip_min=0.0, clip_max=1.0,
+    nb_iter=100, eps_iter=2./255., rand_init=True, clip_min=0.0, clip_max=1.0,
     targeted=False)
 
 
@@ -186,4 +187,5 @@ def adjust_learning_rate(optimizer, epoch):
 for epoch in range(start_epoch, 31):
     adjust_learning_rate(optimizer, epoch)
     train(epoch)
-    test(epoch)
+    if epoch > 20:
+        test(epoch)

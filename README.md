@@ -16,7 +16,7 @@ This repository contains two files. One for adversarial training and one for tes
 | ---------------------------| ----------- |
 | [ WideResNet 28-10 ]       | 46.93%      |
 
-(I did not test every epoch's checkpoint. I simply chose from one of the last epochs to test. Results might be slightly better. I've also released the checkpoint in the below link) 
+(I did not test every epoch's checkpoint. I simply chose from one of the last epochs to test. Results might be slightly better. I've also released the checkpoint in the below link) <br>
 `checkpoint` [Google Drive](https://drive.google.com/file/d/1iZ52Ctcwty8bLMvLJJMlWcHL-__lJcbo/view?usp=sharing) 
 
 ## Dependencies

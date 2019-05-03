@@ -8,7 +8,8 @@ This is a really helpful technique which can significantly accelerate adversaria
 ## Overview
 
 This repository contains two files. One for adversarial training and one for testing. Note that the model used here is not WideResNet 32-10 which is used in the paper 'Adversarial Training for Free'. I use WideResNet 28-10 which is used in the original PGD paper. Be aware that some of the hyperparameters are slightly different from the paper (weight decay and learning rate scheduling)
- 
+
+`checkpoint` [Google Drive](https://drive.google.com/file/d/1iZ52Ctcwty8bLMvLJJMlWcHL-__lJcbo/view?usp=sharing) 
 
 ## Accuracy (under PGD attack: epsilon = 8, step size = 2, iteration = 100)
 | Model                      | Acc         |

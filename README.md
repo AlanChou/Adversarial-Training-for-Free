@@ -2,8 +2,9 @@
 
 This is an unofficial PyTorch implementation of the paper "Adversarial Training for Free!".<br> 
 https://128.84.21.199/pdf/1904.12843.pdf<br>
+This is a really helpful technique which can significantly accelerate adversarial training. <br>
 It only contains the code for adversarial training on CIFAR-10. However one can easily modify it for other datasets. 
-This is a really helpful technique which can significantly accelerate adversarial training.
+
 
 ## Overview
 

@@ -2,8 +2,8 @@
 
 This is an unofficial PyTorch implementation of the paper "Adversarial Training for Free!".<br> 
 https://128.84.21.199/pdf/1904.12843.pdf<br>
-This is a really helpful technique which can significantly accelerate adversarial training. <br>
-It only contains the code for adversarial training on CIFAR-10. However one can easily modify it for other datasets. 
+It's a really helpful technique which can significantly accelerate adversarial training. <br>
+It only contains the code for adversarial training on CIFAR-10. However, one can easily modify it for other datasets. 
 
 I've noticed that in the cleverhans repo, they have an attribute called BACKPROP_THROUGH_ATTACK which is exactly the same idea behind this paper. 
 
@@ -18,7 +18,7 @@ This repository contains two files. One for adversarial training and one for tes
 | ---------------------------| ----------- |
 | [ WideResNet 28-10 ]       | 46.93%      |
 
-I did not test every epoch's checkpoint. I simply chose from one of the last epochs to test. Results might be slightly better. I've also released the checkpoint in the below link) <br>
+I did not test every epoch's checkpoint. I simply chose from one of the last epochs to test. Results might be slightly different. I've also released the checkpoint in the below Google Drive link) <br>
 I have trouble training with ResNet56 and ResNet20 to the baseline they supposed to have which may suggest that this method does not apply to any given models. Please don't hesitate to share your results if you know how to fix this.
 `checkpoint` [Google Drive](https://drive.google.com/file/d/1iZ52Ctcwty8bLMvLJJMlWcHL-__lJcbo/view?usp=sharing) 
 
